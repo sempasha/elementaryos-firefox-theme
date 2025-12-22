@@ -589,7 +589,7 @@ function detectBrowsersProfiles {
         fi
         increaseLogPadding
         for FOUND_PROFILE in "${FOUND_PROFILES[@]}"; do
-          info "📁 $(replaceHomedir ${FOUND_PROFILE})"
+          info "📁 '$(replaceHomedir ${FOUND_PROFILE})'"
         done
         decreaseLogPadding
         BROWSER_PROFILES+=("${FOUND_PROFILES[@]}")
@@ -886,7 +886,7 @@ function installThemeAtBrowserProfile {
   local BROWSER_PROFILE="${1}"
   local BROWSER=$(detectBrowser "${BROWSER_PROFILE}")
 
-  info "🔧 Installing theme at ${BROWSER} profile 📁 $(replaceHomedir ${BROWSER_PROFILE})"
+  info "🔧 Installing theme at ${BROWSER} profile 📁 '$(replaceHomedir ${BROWSER_PROFILE})'"
   increaseLogPadding
 
   if [ "${PATCH_PREFERENCES}" == "yes" ]; then
